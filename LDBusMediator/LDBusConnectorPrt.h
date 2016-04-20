@@ -22,7 +22,7 @@
 /**
  * 当前业务组件可导航的URL询问判断
  */
--(BOOL)canOpenURL:(NSURL *)URL;
+-(BOOL)canOpenURL:(nonnull NSURL *)URL;
 
 /**
  * 业务模块挂接中间件，注册自己能够处理的URL，完成url的跳转；
@@ -32,7 +32,7 @@
  *  @param responseDelg url回调的响应对象
  *  @return (1)nil 表示不能处理，（2）UIViewController的实例，自行处理present （3）UIViewController的派生实例，交给中间件present
  */
-- (UIViewController *)connectToOpenURL:(NSURL *)URL params:(NSDictionary *)params;
+- (nullable UIViewController *)connectToOpenURL:(nonnull NSURL *)URL params:(nullable NSDictionary *)params;
 
 
 /**
@@ -41,7 +41,7 @@
  * 通过protocol协议找到组件中对应的服务实现，生成一个服务单例；
  * 传递给调用者进行protocol接口中属性和方法的调用；
  */
-- (id)connectToHandleProtocol:(Protocol *)servicePrt;
+- (nullable id)connectToHandleProtocol:(nonnull Protocol *)servicePrt;
 
 
 

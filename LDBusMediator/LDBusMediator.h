@@ -31,27 +31,27 @@ FOUNDATION_EXTERN NSString *__nonnull const kLDRouteModeKey;
 #pragma mark - 向总控制中心注册挂接点
 
 //connector自load过程中，注册自己
-+(void)registerConnector:(nullable id<LDBusConnectorPrt>)connector;
++(void)registerConnector:(nonnull id<LDBusConnectorPrt>)connector;
 
 
 #pragma mark - 页面跳转接口
 
 //判断某个URL能否导航
-+(BOOL)canRouteURL:(nullable NSURL *)URL;
++(BOOL)canRouteURL:(nonnull NSURL *)URL;
 
 //通过URL直接完成页面跳转
-+(BOOL)routeURL:(nullable NSURL *)URL;
-+(BOOL)routeURL:(nullable NSURL *)URL withParameters:(nullable NSDictionary *)params;
++(BOOL)routeURL:(nonnull NSURL *)URL;
++(BOOL)routeURL:(nonnull NSURL *)URL withParameters:(nullable NSDictionary *)params;
 
 //通过URL获取viewController实例
-+(nullable UIViewController *)viewControllerForURL:(nullable NSURL *)URL;
-+(nullable UIViewController *)viewControllerForURL:(nullable NSURL *)URL withParameters:(nullable NSDictionary *)params;
++(nullable UIViewController *)viewControllerForURL:(nonnull NSURL *)URL;
++(nullable UIViewController *)viewControllerForURL:(nonnull NSURL *)URL withParameters:(nullable NSDictionary *)params;
 
 
 #pragma mark - 服务调用接口
 
 //根据protocol获取服务实例
-+(nullable id)serviceForProtocol:(nullable Protocol *)protocol;
++(nullable id)serviceForProtocol:(nonnull Protocol *)protocol;
 
 
 @end

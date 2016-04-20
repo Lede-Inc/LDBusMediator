@@ -16,8 +16,8 @@
 @synthesize itemAge = _itemAge;
 
 
--(instancetype)initWithItemName:(NSString *)itemName
-                        itemAge:(int)itemAge{
+-(nonnull instancetype)initWithItemName:(nonnull NSString *)itemName
+                                itemAge:(int)itemAge{
     self = [self init];
     if (self) {
         self.itemName = itemName;
@@ -27,7 +27,7 @@
 }
 
 
--(NSString *)description{
+-(nonnull NSString *)description{
     NSString *description = [NSString stringWithFormat:@"MduleA:itemName==%@,itemAge==%d", self.itemName, self.itemAge];
     return description;
 }

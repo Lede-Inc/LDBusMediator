@@ -42,7 +42,7 @@
 }
 
 
-+(Connector_A *)sharedConnector{
++(nonnull Connector_A *)sharedConnector{
     static Connector_A *_sharedConnector = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -59,7 +59,7 @@
  * (1)当调用方需要通过判断URL是否可导航显示界面的时候，告诉调用方该组件实现是否可导航URL；可导航，返回YES，否则返回NO；
  * (2)这个方法跟connectToOpenURL:params配套实现；如果不实现，则调用方无法判断某个URL是否可导航；
  */
--(BOOL)canOpenURL:(NSURL *)URL{
+-(BOOL)canOpenURL:(nonnull NSURL *)URL{
     if ([URL.host isEqualToString:@"ADetail"]) {
         return YES;
     }
@@ -74,7 +74,7 @@
  * (3)需要在connector中对参数进行验证，不同的参数调用生成不同的ViewController实例；也可以通过参数决定是否自行展示，如果自行展示，则用户定义的展示方式无效；
  * (4)如果挂接的url较多，这里的代码比较长，可以将处理方法分发到当前connector的category中；
  */
-- (UIViewController *)connectToOpenURL:(NSURL *)URL params:(NSDictionary *)params{
+- (nullable UIViewController *)connectToOpenURL:(nonnull NSURL *)URL params:(nullable NSDictionary *)params{
     //处理scheme://ADetail的方式
     if ([URL.host isEqualToString:@"ADetail"]) {
         DemoModuleADetailViewController *viewController = [[DemoModuleADetailViewController alloc] init];
@@ -113,7 +113,7 @@
  *  (2)具体服务协议的实现可放到其他类实现文件中，只需要在当前connetor中引用，返回一个服务实例即可；
  *  (3)如果不能处理，返回一个nil；
  */
-- (id)connectToHandleProtocol:(Protocol *)servicePrt{
+- (nullable id)connectToHandleProtocol:(nonnull Protocol *)servicePrt{
     if (servicePrt == @protocol(ModuleAXXXServicePrt)) {
         return [[self class] sharedConnector];
     }
@@ -126,9 +126,9 @@
 /**
  * 下面三个接口都是组件A向外提供服务的协议实现，当前的服务接口都是同步的，如果是异步回调要注意在服务显示中对多线程进行兼容处理（主要是Block的对应）；
  */
--(void)moduleA_showAlertWithMessage:(NSString *)message
-                       cancelAction:(void(^)(NSDictionary *info))cancelAction
-                      confirmAction:(void(^)(NSDictionary *info))confirmAction{
+-(void)moduleA_showAlertWithMessage:(nonnull NSString *)message
+                       cancelAction:(void(^__nullable)(NSDictionary *__nonnull info))cancelAction
+                      confirmAction:(void(^__nullable)(NSDictionary *__nonnull info))confirmAction{
     UIAlertAction *cancelAlertAction = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         if (cancelAction) {
             cancelAction(@{@"alertAction":action});
@@ -148,14 +148,14 @@
 }
 
 
--(id<ModuleAXXXItemPrt>)moduleA_getItemWithName:(NSString *)name
-                                              age:(int)age{
+-(nonnull id<ModuleAXXXItemPrt>)moduleA_getItemWithName:(nonnull NSString *)name
+                                                    age:(int)age{
     ModuleAXXXItem *item = [[ModuleAXXXItem alloc] initWithItemName:name itemAge:age];
     return item;
 }
 
 
--(void)moduleA_deliveAprotocolModel:(id<ModuleAXXXItemPrt>)item{
+-(void)moduleA_deliveAprotocolModel:(nonnull id<ModuleAXXXItemPrt>)item{
     NSString *showText =[item description];
     UIAlertAction *cancelAlertAction = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"confirm" style:UIAlertActionStyleDefault handler:nil];

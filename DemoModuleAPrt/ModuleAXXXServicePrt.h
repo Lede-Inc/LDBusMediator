@@ -32,17 +32,17 @@
 @required
 //服务接口1: 传入Message显示一个alert，并提供cancel和confirm的回调，这个例子是同步回调
 //如果是异步回调，有实现这个接口的Impl自己去控制，保证多线程安全
--(void)moduleA_showAlertWithMessage:(NSString *)message
-                       cancelAction:(void(^)(NSDictionary *info))cancelAction
-                      confirmAction:(void(^)(NSDictionary *info))confirmAction;
+-(void)moduleA_showAlertWithMessage:(nonnull NSString *)message
+                       cancelAction:(void(^__nullable)(NSDictionary *__nonnull info))cancelAction
+                      confirmAction:(void(^__nullable)(NSDictionary *__nonnull info))confirmAction;
 
 
 //服务接口2: 提供外部组件一个协议化对象
--(id<ModuleAXXXItemPrt>)moduleA_getItemWithName:(NSString *)name
-                                              age:(int)age;
+-(nonnull id<ModuleAXXXItemPrt>)moduleA_getItemWithName:(nonnull NSString *)name
+                                                    age:(int)age;
 
 
 //服务接口3: 外部组件调用服务传入一个协议化对象
--(void)moduleA_deliveAprotocolModel:(id<ModuleAXXXItemPrt>)item;
+-(void)moduleA_deliveAprotocolModel:(nonnull id<ModuleAXXXItemPrt>)item;
 
 @end

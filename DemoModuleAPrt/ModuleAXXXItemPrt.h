@@ -15,15 +15,15 @@
 @protocol ModuleAXXXItemPrt <NSObject>
 
 @required
-@property(nonatomic, readwrite) NSString *itemName;
+@property(nonatomic, readwrite) NSString *__nonnull itemName;
 @property(nonatomic, readwrite) int itemAge;
 
--(NSString *)description;
+-(nonnull NSString *)description;
 
 
 @optional
--(instancetype)initWithItemName:(NSString *)itemName
-                        itemAge:(int)itemAge;
+-(nonnull instancetype)initWithItemName:(nonnull NSString *)itemName
+                                itemAge:(int)itemAge;
 
 
 

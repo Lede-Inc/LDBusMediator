@@ -10,8 +10,8 @@
 
 @implementation LDBusNavigator
 
-+(void)showURLController:(UIViewController *)controller
-      baseViewController:(UIViewController *)baseViewController
++(void)showURLController:(nonnull UIViewController *)controller
+      baseViewController:(nullable UIViewController *)baseViewController
                routeMode:(NavigationMode)routeMode{
     if (routeMode == NavigationModeNone) {
         routeMode = NavigationModePush;
@@ -37,8 +37,8 @@
 }
 
 
-+(void)pushViewController:(UIViewController *)controller
-       baseViewController:(UIViewController *)baseViewController{
++(void)pushViewController:(nonnull UIViewController *)controller
+       baseViewController:(nullable UIViewController *)baseViewController{
     if (!baseViewController) {
         baseViewController = [self topmostViewController];
     }
@@ -55,8 +55,8 @@
 }
 
 
-+(void)popToSharedViewController:(UIViewController *)controller
-              baseViewController:(UIViewController *)baseViewController{
++(void)popToSharedViewController:(nonnull UIViewController *)controller
+              baseViewController:(nullable UIViewController *)baseViewController{
     UIViewController *rootViewContoller = [UIApplication sharedApplication].delegate.window.rootViewController;
     if(!rootViewContoller) return;
 
@@ -97,8 +97,8 @@
 }
 
 
-+(void)presentedViewController:(UIViewController *)controller
-            baseViewController:(UIViewController *)baseViewController{
++(void)presentedViewController:(nonnull UIViewController *)controller
+            baseViewController:(nullable UIViewController *)baseViewController{
     if(baseViewController == nil){
         baseViewController = [self topmostViewController];
     }
@@ -117,7 +117,7 @@
 }
 
 
-+(BOOL)popToSharedViewController:(UIViewController *)controller InNavigationController:(UINavigationController *)navigationController{
++(BOOL)popToSharedViewController:(nonnull UIViewController *)controller InNavigationController:(nonnull UINavigationController *)navigationController{
     NSInteger count = navigationController.viewControllers.count;
     if(count == 0) return NO;
 

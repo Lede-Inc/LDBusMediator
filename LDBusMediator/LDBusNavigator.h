@@ -29,8 +29,8 @@ typedef enum {
  *  @param baseViewController 展示的BaseViewController
  *  @param routeMode  展示的方式
  */
-+(void)showURLController:(UIViewController *)controller
-      baseViewController:(UIViewController *)baseViewController
++(void)showURLController:(nonnull UIViewController *)controller
+      baseViewController:(nullable UIViewController *)baseViewController
                routeMode:(NavigationMode)routeMode;
 
 

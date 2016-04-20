@@ -12,7 +12,7 @@
 @synthesize itemName;
 @synthesize itemAge;
 
--(NSString *)description{
+-(nonnull NSString *)description{
     NSString *description = [NSString stringWithFormat:@"HostModule:itemName==%@,itemAge==%d", self.itemName, self.itemAge];
     return description;
 }
