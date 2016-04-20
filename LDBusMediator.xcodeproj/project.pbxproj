@@ -1,0 +1,390 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6261A8B51CC65EF500E94D06 /* LDBusMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A88D1CC65DDC00E94D06 /* LDBusMediator.m */; };
+		6261A8B61CC65EF500E94D06 /* ModuleAXXXItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A87F1CC6290D00E94D06 /* ModuleAXXXItem.m */; };
+		6261A8B71CC65EF500E94D06 /* UIView+LayoutMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A8A21CC65DEF00E94D06 /* UIView+LayoutMethods.m */; };
+		6261A8B81CC65EF500E94D06 /* DemoModuleADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A8751CC6151100E94D06 /* DemoModuleADetailViewController.m */; };
+		6261A8B91CC65EF500E94D06 /* HostModuleXXXItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A89E1CC65DEF00E94D06 /* HostModuleXXXItem.m */; };
+		6261A8BA1CC65EF500E94D06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A8A41CC65DEF00E94D06 /* ViewController.m */; };
+		6261A8BB1CC65EF500E94D06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A8AF1CC65E6700E94D06 /* main.m */; };
+		6261A8BC1CC65EF500E94D06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A8971CC65DEF00E94D06 /* AppDelegate.m */; };
+		6261A8BD1CC65EF500E94D06 /* LDBusNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A88F1CC65DDC00E94D06 /* LDBusNavigator.m */; };
+		6261A8BE1CC65EF500E94D06 /* Connector_A.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A8731CC6151100E94D06 /* Connector_A.m */; };
+		6261A8C21CC65EF500E94D06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6261A8981CC65DEF00E94D06 /* Assets.xcassets */; };
+		6261A8C31CC65EF500E94D06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6261A89B1CC65DEF00E94D06 /* Main.storyboard */; };
+		6261A8C41CC65EF500E94D06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6261A8991CC65DEF00E94D06 /* LaunchScreen.storyboard */; };
+		6261A8C51CC65EF500E94D06 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6261A8B11CC65E8000E94D06 /* Info.plist */; };
+		6271676B1CC71271008CCD25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6271676A1CC71271008CCD25 /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6261A8721CC6151100E94D06 /* Connector_A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector_A.h; sourceTree = "<group>"; };
+		6261A8731CC6151100E94D06 /* Connector_A.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connector_A.m; sourceTree = "<group>"; };
+		6261A8741CC6151100E94D06 /* DemoModuleADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModuleADetailViewController.h; sourceTree = "<group>"; };
+		6261A8751CC6151100E94D06 /* DemoModuleADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoModuleADetailViewController.m; sourceTree = "<group>"; };
+		6261A87A1CC6153B00E94D06 /* ModuleAXXXServicePrt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAXXXServicePrt.h; sourceTree = "<group>"; };
+		6261A87B1CC61D3600E94D06 /* ModuleAXXXItemPrt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAXXXItemPrt.h; sourceTree = "<group>"; };
+		6261A87E1CC6290D00E94D06 /* ModuleAXXXItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAXXXItem.h; sourceTree = "<group>"; };
+		6261A87F1CC6290D00E94D06 /* ModuleAXXXItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleAXXXItem.m; sourceTree = "<group>"; };
+		6261A88B1CC65DDC00E94D06 /* LDBusConnectorPrt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBusConnectorPrt.h; sourceTree = "<group>"; };
+		6261A88C1CC65DDC00E94D06 /* LDBusMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBusMediator.h; sourceTree = "<group>"; };
+		6261A88D1CC65DDC00E94D06 /* LDBusMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBusMediator.m; sourceTree = "<group>"; };
+		6261A88E1CC65DDC00E94D06 /* LDBusNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBusNavigator.h; sourceTree = "<group>"; };
+		6261A88F1CC65DDC00E94D06 /* LDBusNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBusNavigator.m; sourceTree = "<group>"; };
+		6261A8961CC65DEF00E94D06 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6261A8971CC65DEF00E94D06 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6261A8981CC65DEF00E94D06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6261A89A1CC65DEF00E94D06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6261A89C1CC65DEF00E94D06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6261A89D1CC65DEF00E94D06 /* HostModuleXXXItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostModuleXXXItem.h; sourceTree = "<group>"; };
+		6261A89E1CC65DEF00E94D06 /* HostModuleXXXItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostModuleXXXItem.m; sourceTree = "<group>"; };
+		6261A8A11CC65DEF00E94D06 /* UIView+LayoutMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+LayoutMethods.h"; path = "LDBusMediatorDemo/UIView+LayoutMethods.h"; sourceTree = "<group>"; };
+		6261A8A21CC65DEF00E94D06 /* UIView+LayoutMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+LayoutMethods.m"; path = "LDBusMediatorDemo/UIView+LayoutMethods.m"; sourceTree = "<group>"; };
+		6261A8A31CC65DEF00E94D06 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6261A8A41CC65DEF00E94D06 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6261A8AF1CC65E6700E94D06 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LDBusMediatorDemo/main.m; sourceTree = SOURCE_ROOT; };
+		6261A8B11CC65E8000E94D06 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LDBusMediatorDemo/Info.plist; sourceTree = SOURCE_ROOT; };
+		6261A8C91CC65EF500E94D06 /* LDBusMediator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDBusMediator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6271676A1CC71271008CCD25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6261A8C01CC65EF500E94D06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A5CE4F11C9531C9006AEDB9 = {
+			isa = PBXGroup;
+			children = (
+				6261A8791CC6153B00E94D06 /* DemoModuleAPrt */,
+				6261A8711CC6151100E94D06 /* DemoModuleA */,
+				6261A88A1CC65DDC00E94D06 /* LDBusMediator */,
+				6261A8951CC65DEF00E94D06 /* LDBusMediatorDemo */,
+				6261A8AE1CC65E2100E94D06 /* UtilCommon */,
+				4A5CE4FB1C9531C9006AEDB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A5CE4FB1C9531C9006AEDB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6261A8C91CC65EF500E94D06 /* LDBusMediator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A5CE4FD1C9531C9006AEDB9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6261A8AF1CC65E6700E94D06 /* main.m */,
+				6261A8B11CC65E8000E94D06 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = ../CTMediator;
+			sourceTree = "<group>";
+		};
+		6261A8711CC6151100E94D06 /* DemoModuleA */ = {
+			isa = PBXGroup;
+			children = (
+				6261A8721CC6151100E94D06 /* Connector_A.h */,
+				6261A8731CC6151100E94D06 /* Connector_A.m */,
+				6261A87E1CC6290D00E94D06 /* ModuleAXXXItem.h */,
+				6261A87F1CC6290D00E94D06 /* ModuleAXXXItem.m */,
+				6261A8741CC6151100E94D06 /* DemoModuleADetailViewController.h */,
+				6261A8751CC6151100E94D06 /* DemoModuleADetailViewController.m */,
+			);
+			path = DemoModuleA;
+			sourceTree = "<group>";
+		};
+		6261A8791CC6153B00E94D06 /* DemoModuleAPrt */ = {
+			isa = PBXGroup;
+			children = (
+				6261A87A1CC6153B00E94D06 /* ModuleAXXXServicePrt.h */,
+				6261A87B1CC61D3600E94D06 /* ModuleAXXXItemPrt.h */,
+			);
+			path = DemoModuleAPrt;
+			sourceTree = "<group>";
+		};
+		6261A88A1CC65DDC00E94D06 /* LDBusMediator */ = {
+			isa = PBXGroup;
+			children = (
+				6261A88B1CC65DDC00E94D06 /* LDBusConnectorPrt.h */,
+				6261A88C1CC65DDC00E94D06 /* LDBusMediator.h */,
+				6261A88D1CC65DDC00E94D06 /* LDBusMediator.m */,
+				6261A88E1CC65DDC00E94D06 /* LDBusNavigator.h */,
+				6261A88F1CC65DDC00E94D06 /* LDBusNavigator.m */,
+			);
+			path = LDBusMediator;
+			sourceTree = "<group>";
+		};
+		6261A8951CC65DEF00E94D06 /* LDBusMediatorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6261A8961CC65DEF00E94D06 /* AppDelegate.h */,
+				6261A8971CC65DEF00E94D06 /* AppDelegate.m */,
+				6261A89D1CC65DEF00E94D06 /* HostModuleXXXItem.h */,
+				6261A89E1CC65DEF00E94D06 /* HostModuleXXXItem.m */,
+				6261A8A31CC65DEF00E94D06 /* ViewController.h */,
+				6261A8A41CC65DEF00E94D06 /* ViewController.m */,
+				6261A89B1CC65DEF00E94D06 /* Main.storyboard */,
+				6261A8981CC65DEF00E94D06 /* Assets.xcassets */,
+				6261A8991CC65DEF00E94D06 /* LaunchScreen.storyboard */,
+				6271676A1CC71271008CCD25 /* Default-568h@2x.png */,
+				4A5CE4FD1C9531C9006AEDB9 /* Supporting Files */,
+			);
+			path = LDBusMediatorDemo;
+			sourceTree = "<group>";
+		};
+		6261A8AE1CC65E2100E94D06 /* UtilCommon */ = {
+			isa = PBXGroup;
+			children = (
+				6261A8A11CC65DEF00E94D06 /* UIView+LayoutMethods.h */,
+				6261A8A21CC65DEF00E94D06 /* UIView+LayoutMethods.m */,
+			);
+			name = UtilCommon;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6261A8B31CC65EF500E94D06 /* LDBusMediator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6261A8C61CC65EF500E94D06 /* Build configuration list for PBXNativeTarget "LDBusMediator" */;
+			buildPhases = (
+				6261A8B41CC65EF500E94D06 /* Sources */,
+				6261A8C01CC65EF500E94D06 /* Frameworks */,
+				6261A8C11CC65EF500E94D06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LDBusMediator;
+			productName = CTMediator;
+			productReference = 6261A8C91CC65EF500E94D06 /* LDBusMediator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A5CE4F21C9531C9006AEDB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = casa;
+			};
+			buildConfigurationList = 4A5CE4F51C9531C9006AEDB9 /* Build configuration list for PBXProject "LDBusMediator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A5CE4F11C9531C9006AEDB9;
+			productRefGroup = 4A5CE4FB1C9531C9006AEDB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6261A8B31CC65EF500E94D06 /* LDBusMediator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6261A8C11CC65EF500E94D06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6261A8C21CC65EF500E94D06 /* Assets.xcassets in Resources */,
+				6261A8C31CC65EF500E94D06 /* Main.storyboard in Resources */,
+				6261A8C41CC65EF500E94D06 /* LaunchScreen.storyboard in Resources */,
+				6271676B1CC71271008CCD25 /* Default-568h@2x.png in Resources */,
+				6261A8C51CC65EF500E94D06 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6261A8B41CC65EF500E94D06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6261A8B51CC65EF500E94D06 /* LDBusMediator.m in Sources */,
+				6261A8B61CC65EF500E94D06 /* ModuleAXXXItem.m in Sources */,
+				6261A8B71CC65EF500E94D06 /* UIView+LayoutMethods.m in Sources */,
+				6261A8B81CC65EF500E94D06 /* DemoModuleADetailViewController.m in Sources */,
+				6261A8B91CC65EF500E94D06 /* HostModuleXXXItem.m in Sources */,
+				6261A8BA1CC65EF500E94D06 /* ViewController.m in Sources */,
+				6261A8BB1CC65EF500E94D06 /* main.m in Sources */,
+				6261A8BC1CC65EF500E94D06 /* AppDelegate.m in Sources */,
+				6261A8BD1CC65EF500E94D06 /* LDBusNavigator.m in Sources */,
+				6261A8BE1CC65EF500E94D06 /* Connector_A.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6261A8991CC65DEF00E94D06 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6261A89A1CC65DEF00E94D06 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6261A89B1CC65DEF00E94D06 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6261A89C1CC65DEF00E94D06 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A5CE50F1C9531C9006AEDB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A5CE5101C9531C9006AEDB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6261A8C71CC65EF500E94D06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LDBusMediatorDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = casa.CTMediator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6261A8C81CC65EF500E94D06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LDBusMediatorDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = casa.CTMediator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A5CE4F51C9531C9006AEDB9 /* Build configuration list for PBXProject "LDBusMediator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A5CE50F1C9531C9006AEDB9 /* Debug */,
+				4A5CE5101C9531C9006AEDB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6261A8C61CC65EF500E94D06 /* Build configuration list for PBXNativeTarget "LDBusMediator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6261A8C71CC65EF500E94D06 /* Debug */,
+				6261A8C81CC65EF500E94D06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A5CE4F21C9531C9006AEDB9 /* Project object */;
+}
