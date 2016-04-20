@@ -20,9 +20,14 @@
 @optional
 
 /**
- * 业务模块挂接中间件，注册自己能够处理的url，完成url的跳转；
+ * 当前业务组件可导航的URL询问判断
+ */
+-(BOOL)canOpenURL:(NSURL *)URL;
+
+/**
+ * 业务模块挂接中间件，注册自己能够处理的URL，完成url的跳转；
  * 如果url跳转需要回传数据，则传入实现了数据接收的调用者；
- *  @param url          跳转到的URL，通常为 ntescaipiao://connector/relativePath
+ *  @param URL          跳转到的URL，通常为 ntescaipiao://connector/relativePath
  *  @param params       伴随url的的调用参数
  *  @param responseDelg url回调的响应对象
  *  @return (1)nil 表示不能处理，（2）UIViewController的实例，自行处理present （3）UIViewController的派生实例，交给中间件present

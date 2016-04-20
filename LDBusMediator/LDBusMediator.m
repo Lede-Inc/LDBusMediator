@@ -39,6 +39,25 @@ static NSMutableDictionary *g_connectorMap = nil;
 
 #pragma mark - 页面跳转接口
 
+//判断某个URL能否导航
++(BOOL)canRouteURL:(nullable NSURL *)URL{
+    if(!URL || !g_connectorMap || g_connectorMap.count <= 0) return NO;
+
+    BOOL success = NO;
+    for(NSString *connectorKey in g_connectorMap.allKeys){
+        id<LDBusConnectorPrt> connector = [g_connectorMap objectForKey:connectorKey];
+        if([connector respondsToSelector:@selector(canOpenURL:)]){
+            if ([connector canOpenURL:URL]) {
+                success = YES;
+                break;
+            }
+        }
+    }
+
+    return success;
+}
+
+
 +(BOOL)routeURL:(nullable NSURL *)URL{
     return [self routeURL:URL withParameters:nil];
 }

@@ -36,6 +36,9 @@ FOUNDATION_EXTERN NSString *__nonnull const kLDRouteModeKey;
 
 #pragma mark - 页面跳转接口
 
+//判断某个URL能否导航
++(BOOL)canRouteURL:(nullable NSURL *)URL;
+
 //通过URL直接完成页面跳转
 +(BOOL)routeURL:(nullable NSURL *)URL;
 +(BOOL)routeURL:(nullable NSURL *)URL withParameters:(nullable NSDictionary *)params;

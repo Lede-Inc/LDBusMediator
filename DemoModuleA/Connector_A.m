@@ -56,6 +56,19 @@
 #pragma mark - LDBusConnectorPrt 
 
 /**
+ * (1)当调用方需要通过判断URL是否可导航显示界面的时候，告诉调用方该组件实现是否可导航URL；可导航，返回YES，否则返回NO；
+ * (2)这个方法跟connectToOpenURL:params配套实现；如果不实现，则调用方无法判断某个URL是否可导航；
+ */
+-(BOOL)canOpenURL:(NSURL *)URL{
+    if ([URL.host isEqualToString:@"ADetail"]) {
+        return YES;
+    }
+
+    return NO;
+}
+
+
+/**
  * (1)通过connector向busMediator挂载可导航的URL，具体解析URL的host还是path，由connector自行决定；
  * (2)如果URL在本业务组件可导航，则从params获取参数，实例化对应的viewController进行返回；如果不需要中间件进行present展示，则返回一个[UIViewController new],表示当前可处理；如果无法处理，返回nil，交由其他组件处理；
  * (3)需要在connector中对参数进行验证，不同的参数调用生成不同的ViewController实例；也可以通过参数决定是否自行展示，如果自行展示，则用户定义的展示方式无效；

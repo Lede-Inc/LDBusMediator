@@ -63,7 +63,9 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
     }
 
     if (indexPath.row == 1) {
-        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+        if([LDBusMediator canRouteURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]]){
+            [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+        }
     }
 
     if (indexPath.row == 2) {
