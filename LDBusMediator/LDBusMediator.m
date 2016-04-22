@@ -9,6 +9,7 @@
 #import "LDBusMediator.h"
 #import "LDBusNavigator.h"
 #import "LDBusConnectorPrt.h"
+#import "LDBusMediatorTipViewController.h"
 
 NSString* const kLDRouteViewControllerKey = @"LDRouteViewController";
 NSString *__nonnull const kLDRouteModeKey = @"kLDRouteType";
@@ -69,19 +70,43 @@ static NSMutableDictionary<NSString *, id<LDBusConnectorPrt>> *g_connectorMap = 
     if(!g_connectorMap || g_connectorMap.count <= 0) return NO;
 
     __block BOOL success = NO;
+    __block int queryCount = 0;
     NSDictionary *userParams = [self userParametersWithURL:URL andParameters:params];
     [g_connectorMap enumerateKeysAndObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSString * _Nonnull key, id<LDBusConnectorPrt>  _Nonnull connector, BOOL * _Nonnull stop) {
+        queryCount++;
         if([connector respondsToSelector:@selector(connectToOpenURL:params:)]){
             id returnObj = [connector connectToOpenURL:URL params:userParams];
-            if(returnObj && ([returnObj class] == [UIViewController class] || [returnObj isKindOfClass:[UIViewController class]])){
-                if([returnObj class] != [UIViewController class]){
+            if(returnObj && [returnObj isKindOfClass:[UIViewController class]]){
+                if ([returnObj isKindOfClass:[LDBusMediatorTipViewController class]]) {
+                    LDBusMediatorTipViewController *tipController = (LDBusMediatorTipViewController *)returnObj;
+                    if (tipController.isNotURLSupport) {
+                        success = YES;
+                    } else {
+                        success = NO;
+#if DEBUG
+                        [tipController showDebugTipController:URL withParameters:params];
+                        success = YES;
+#endif
+                    }
+                } else if ([returnObj class] == [UIViewController class]){
+                    success = YES;
+                } else {
                     [LDBusNavigator showURLController:returnObj baseViewController:params[kLDRouteViewControllerKey] routeMode:params[kLDRouteModeKey]?[params[kLDRouteModeKey] intValue]:NavigationModePush];
+                    success = YES;
                 }
-                success = YES;
+
                 *stop = YES;
             }
         }
     }];
+
+
+#if DEBUG
+    if (!success && queryCount == g_connectorMap.count) {
+        [((LDBusMediatorTipViewController *)[UIViewController notFound]) showDebugTipController:URL withParameters:params];
+        return NO;
+    }
+#endif
 
     return success;
 }
@@ -96,17 +121,41 @@ static NSMutableDictionary<NSString *, id<LDBusConnectorPrt>> *g_connectorMap = 
     if(!g_connectorMap || g_connectorMap.count <= 0) return nil;
 
     __block UIViewController *returnObj = nil;
+    __block int queryCount = 0;
     NSDictionary *userParams = [self userParametersWithURL:URL andParameters:params];
     [g_connectorMap enumerateKeysAndObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSString * _Nonnull key, id<LDBusConnectorPrt>  _Nonnull connector, BOOL * _Nonnull stop) {
+        queryCount++;
         if([connector respondsToSelector:@selector(connectToOpenURL:params:)]){
             returnObj = [connector connectToOpenURL:URL params:userParams];
-            if(returnObj && ([returnObj class] == [UIViewController class] || [returnObj isKindOfClass:[UIViewController class]])){
+            if(returnObj && [returnObj isKindOfClass:[UIViewController class]]){
                 *stop = YES;
             }
         }
     }];
 
-    return returnObj;
+
+#if DEBUG
+    if (!returnObj && queryCount == g_connectorMap.count) {
+        [((LDBusMediatorTipViewController *)[UIViewController notFound]) showDebugTipController:URL withParameters:params];
+        return nil;
+    }
+#endif
+
+
+    if (returnObj) {
+        if ([returnObj isKindOfClass:[LDBusMediatorTipViewController class]]) {
+#if DEBUG
+            [((LDBusMediatorTipViewController *)returnObj) showDebugTipController:URL withParameters:params];
+#endif
+            return nil;
+        } else if([returnObj class] == [UIViewController class]){
+            return nil;
+        } else {
+            return returnObj;
+        }
+    }
+
+    return nil;
 }
 
 

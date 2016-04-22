@@ -59,7 +59,7 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
     //LDBusMediator Call
     if (indexPath.row == 0) {
         //presentViewController
-        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"] withParameters:@{kLDRouteModeKey:@(NavigationModePresent)}];
+        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail11"] withParameters:@{kLDRouteModeKey:@(NavigationModePresent)}];
     }
 
     if (indexPath.row == 1) {
@@ -93,6 +93,13 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
         item.itemAge = 9000;
         [[LDBusMediator serviceForProtocol:@protocol(ModuleAXXXServicePrt)] moduleA_deliveAprotocolModel:item];
     }
+
+    if (indexPath.row == 7) {
+        UIViewController *controller = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+        if (controller) {
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+    }
 }
 
 #pragma mark - getters and setters
@@ -111,7 +118,7 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
 - (NSArray *)dataSource
 {
     if (_dataSource == nil) {
-        _dataSource = @[@"present detail view controller", @"push detail view controller", @"present image", @"present image when error", @"service: show alert", @"service:get protcol model", @"service: set protocol model"];
+        _dataSource = @[@"present detail view controller", @"push detail view controller", @"present image", @"present image when error", @"service: show alert", @"service:get protcol model", @"service: set protocol model", @"get url controller"];
     }
     return _dataSource;
 }

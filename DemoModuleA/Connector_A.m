@@ -70,7 +70,7 @@
 
 /**
  * (1)通过connector向busMediator挂载可导航的URL，具体解析URL的host还是path，由connector自行决定；
- * (2)如果URL在本业务组件可导航，则从params获取参数，实例化对应的viewController进行返回；如果不需要中间件进行present展示，则返回一个[UIViewController new],表示当前可处理；如果无法处理，返回nil，交由其他组件处理；
+ * (2)如果URL在本业务组件可导航，则从params获取参数，实例化对应的viewController进行返回；如果参数错误，则返回一个错误提示的[UIViewController paramsError]; 如果不需要中间件进行present展示，则返回一个[UIViewController notURLController],表示当前可处理；如果无法处理，返回nil，交由其他组件处理；
  * (3)需要在connector中对参数进行验证，不同的参数调用生成不同的ViewController实例；也可以通过参数决定是否自行展示，如果自行展示，则用户定义的展示方式无效；
  * (4)如果挂接的url较多，这里的代码比较长，可以将处理方法分发到当前connector的category中；
  */
@@ -87,12 +87,12 @@
                 viewController.valueLabel.text = @"this is image";
                 viewController.imageView.image = params[@"image"];
                 [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:viewController animated:YES completion:nil];
-                return [UIViewController new];
+                return [UIViewController notURLController];
             } else {
                 viewController.valueLabel.text = @"no image";
                 viewController.imageView.image = [UIImage imageNamed:@"noImage"];
                 [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:viewController animated:YES completion:nil];
-                return [UIViewController new];
+                return [UIViewController notURLController];
             }
         } else {
             // nothing to do

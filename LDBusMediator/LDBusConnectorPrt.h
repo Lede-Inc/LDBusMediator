@@ -30,7 +30,11 @@
  *  @param URL          跳转到的URL，通常为 ntescaipiao://connector/relativePath
  *  @param params       伴随url的的调用参数
  *  @param responseDelg url回调的响应对象
- *  @return (1)nil 表示不能处理，（2）UIViewController的实例，自行处理present （3）UIViewController的派生实例，交给中间件present
+ *  @return 
+    (1) UIViewController的派生实例，交给中间件present;
+    (2) nil 表示不能处理;
+    (3) [UIViewController notURLController]的实例，自行处理present;
+    (4) [UIViewController paramsError]的实例，参数错误，无法导航;
  */
 - (nullable UIViewController *)connectToOpenURL:(nonnull NSURL *)URL params:(nullable NSDictionary *)params;
 
