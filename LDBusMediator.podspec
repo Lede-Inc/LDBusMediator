@@ -12,5 +12,6 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '7.0'
     s.public_header_files = 'LDBusMediator/*.h'
     s.source_files = 'LDBusMediator/*.{h,m}'
+    s.prefix_header_contents = '#import <LDBusMediator/LDBusMediator.h>', '#import <LDBusMediator/LDBusConnectorPrt.h>'
     s.requires_arc = true
 end

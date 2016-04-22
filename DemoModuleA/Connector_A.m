@@ -76,6 +76,7 @@
  */
 - (nullable UIViewController *)connectToOpenURL:(nonnull NSURL *)URL params:(nullable NSDictionary *)params{
     //处理scheme://ADetail的方式
+    // tip: url较少的时候可以通过if-else去处理，如果url较多，可以自己维护一个url和ViewController的map，加快遍历查找，生成viewController；
     if ([URL.host isEqualToString:@"ADetail"]) {
         DemoModuleADetailViewController *viewController = [[DemoModuleADetailViewController alloc] init];
         if (params[@"key"] != nil) {

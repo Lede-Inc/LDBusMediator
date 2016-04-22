@@ -21,6 +21,8 @@
 		6261A8C31CC65EF500E94D06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6261A89B1CC65DEF00E94D06 /* Main.storyboard */; };
 		6261A8C41CC65EF500E94D06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6261A8991CC65DEF00E94D06 /* LaunchScreen.storyboard */; };
 		6271676B1CC71271008CCD25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6271676A1CC71271008CCD25 /* Default-568h@2x.png */; };
+		6271676F1CC86574008CCD25 /* LDBusMediator.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 6271676D1CC86574008CCD25 /* LDBusMediator.podspec */; };
+		627167701CC86574008CCD25 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6271676E1CC86574008CCD25 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		6261A8B11CC65E8000E94D06 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LDBusMediatorDemo/Info.plist; sourceTree = SOURCE_ROOT; };
 		6261A8C91CC65EF500E94D06 /* LDBusMediator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDBusMediator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6271676A1CC71271008CCD25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		6271676D1CC86574008CCD25 /* LDBusMediator.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LDBusMediator.podspec; sourceTree = "<group>"; };
+		6271676E1CC86574008CCD25 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		4A5CE4F11C9531C9006AEDB9 = {
 			isa = PBXGroup;
 			children = (
+				6271676C1CC86564008CCD25 /* Podsepc */,
 				6261A8791CC6153B00E94D06 /* DemoModuleAPrt */,
 				6261A8711CC6151100E94D06 /* DemoModuleA */,
 				6261A88A1CC65DDC00E94D06 /* LDBusMediator */,
@@ -156,6 +161,15 @@
 			name = UtilCommon;
 			sourceTree = "<group>";
 		};
+		6271676C1CC86564008CCD25 /* Podsepc */ = {
+			isa = PBXGroup;
+			children = (
+				6271676D1CC86574008CCD25 /* LDBusMediator.podspec */,
+				6271676E1CC86574008CCD25 /* LICENSE */,
+			);
+			name = Podsepc;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,6 +222,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627167701CC86574008CCD25 /* LICENSE in Resources */,
+				6271676F1CC86574008CCD25 /* LDBusMediator.podspec in Resources */,
 				6261A8C21CC65EF500E94D06 /* Assets.xcassets in Resources */,
 				6261A8C31CC65EF500E94D06 /* Main.storyboard in Resources */,
 				6261A8C41CC65EF500E94D06 /* LaunchScreen.storyboard in Resources */,
