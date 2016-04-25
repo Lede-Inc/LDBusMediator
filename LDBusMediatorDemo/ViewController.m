@@ -95,7 +95,9 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
     }
 
     if (indexPath.row == 7) {
-        UIViewController *controller = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+//        UIViewController *controller = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+        //测试notURLController
+        UIViewController *controller = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"ntescaipiao://ADetail"] withParameters:@{@"image":@""}];
         if (controller) {
             [self.navigationController pushViewController:controller animated:YES];
         }

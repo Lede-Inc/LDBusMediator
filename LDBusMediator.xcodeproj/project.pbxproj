@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6215BE8B1CCDB41A0042B0F6 /* LDBusMediatorTipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6215BE881CCDB41A0042B0F6 /* LDBusMediatorTipViewController.m */; };
+		6215BE8C1CCDB41A0042B0F6 /* UIViewController+NavigationTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6215BE8A1CCDB41A0042B0F6 /* UIViewController+NavigationTip.m */; };
 		6261A8B51CC65EF500E94D06 /* LDBusMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A88D1CC65DDC00E94D06 /* LDBusMediator.m */; };
 		6261A8B61CC65EF500E94D06 /* ModuleAXXXItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A87F1CC6290D00E94D06 /* ModuleAXXXItem.m */; };
 		6261A8B71CC65EF500E94D06 /* UIView+LayoutMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 6261A8A21CC65DEF00E94D06 /* UIView+LayoutMethods.m */; };
@@ -23,11 +25,13 @@
 		6271676B1CC71271008CCD25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6271676A1CC71271008CCD25 /* Default-568h@2x.png */; };
 		6271676F1CC86574008CCD25 /* LDBusMediator.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 6271676D1CC86574008CCD25 /* LDBusMediator.podspec */; };
 		627167701CC86574008CCD25 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6271676E1CC86574008CCD25 /* LICENSE */; };
-		627C00A01CCA1E4D00094286 /* UIViewController+NavigationTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 627C009F1CCA1E4D00094286 /* UIViewController+NavigationTip.m */; };
-		627C00A31CCA1E9300094286 /* LDBusMediatorTipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 627C00A21CCA1E9300094286 /* LDBusMediatorTipViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6215BE871CCDB41A0042B0F6 /* LDBusMediatorTipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBusMediatorTipViewController.h; sourceTree = "<group>"; };
+		6215BE881CCDB41A0042B0F6 /* LDBusMediatorTipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBusMediatorTipViewController.m; sourceTree = "<group>"; };
+		6215BE891CCDB41A0042B0F6 /* UIViewController+NavigationTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationTip.h"; sourceTree = "<group>"; };
+		6215BE8A1CCDB41A0042B0F6 /* UIViewController+NavigationTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationTip.m"; sourceTree = "<group>"; };
 		6261A8721CC6151100E94D06 /* Connector_A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connector_A.h; sourceTree = "<group>"; };
 		6261A8731CC6151100E94D06 /* Connector_A.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connector_A.m; sourceTree = "<group>"; };
 		6261A8741CC6151100E94D06 /* DemoModuleADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModuleADetailViewController.h; sourceTree = "<group>"; };
@@ -58,10 +62,6 @@
 		6271676A1CC71271008CCD25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		6271676D1CC86574008CCD25 /* LDBusMediator.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LDBusMediator.podspec; sourceTree = "<group>"; };
 		6271676E1CC86574008CCD25 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		627C009E1CCA1E4D00094286 /* UIViewController+NavigationTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationTip.h"; sourceTree = "<group>"; };
-		627C009F1CCA1E4D00094286 /* UIViewController+NavigationTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationTip.m"; sourceTree = "<group>"; };
-		627C00A11CCA1E9300094286 /* LDBusMediatorTipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBusMediatorTipViewController.h; sourceTree = "<group>"; };
-		627C00A21CCA1E9300094286 /* LDBusMediatorTipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBusMediatorTipViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +136,10 @@
 				6261A88D1CC65DDC00E94D06 /* LDBusMediator.m */,
 				6261A88E1CC65DDC00E94D06 /* LDBusNavigator.h */,
 				6261A88F1CC65DDC00E94D06 /* LDBusNavigator.m */,
-				627C009D1CCA1E4D00094286 /* debug */,
+				6215BE891CCDB41A0042B0F6 /* UIViewController+NavigationTip.h */,
+				6215BE8A1CCDB41A0042B0F6 /* UIViewController+NavigationTip.m */,
+				6215BE871CCDB41A0042B0F6 /* LDBusMediatorTipViewController.h */,
+				6215BE881CCDB41A0042B0F6 /* LDBusMediatorTipViewController.m */,
 			);
 			path = LDBusMediator;
 			sourceTree = "<group>";
@@ -175,17 +178,6 @@
 				6271676E1CC86574008CCD25 /* LICENSE */,
 			);
 			name = Podsepc;
-			sourceTree = "<group>";
-		};
-		627C009D1CCA1E4D00094286 /* debug */ = {
-			isa = PBXGroup;
-			children = (
-				627C009E1CCA1E4D00094286 /* UIViewController+NavigationTip.h */,
-				627C009F1CCA1E4D00094286 /* UIViewController+NavigationTip.m */,
-				627C00A11CCA1E9300094286 /* LDBusMediatorTipViewController.h */,
-				627C00A21CCA1E9300094286 /* LDBusMediatorTipViewController.m */,
-			);
-			path = debug;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,15 +248,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				627C00A01CCA1E4D00094286 /* UIViewController+NavigationTip.m in Sources */,
+				6215BE8C1CCDB41A0042B0F6 /* UIViewController+NavigationTip.m in Sources */,
 				6261A8B51CC65EF500E94D06 /* LDBusMediator.m in Sources */,
 				6261A8B61CC65EF500E94D06 /* ModuleAXXXItem.m in Sources */,
 				6261A8B71CC65EF500E94D06 /* UIView+LayoutMethods.m in Sources */,
+				6215BE8B1CCDB41A0042B0F6 /* LDBusMediatorTipViewController.m in Sources */,
 				6261A8B81CC65EF500E94D06 /* DemoModuleADetailViewController.m in Sources */,
 				6261A8B91CC65EF500E94D06 /* HostModuleXXXItem.m in Sources */,
 				6261A8BA1CC65EF500E94D06 /* ViewController.m in Sources */,
 				6261A8BB1CC65EF500E94D06 /* main.m in Sources */,
-				627C00A31CCA1E9300094286 /* LDBusMediatorTipViewController.m in Sources */,
 				6261A8BC1CC65EF500E94D06 /* AppDelegate.m in Sources */,
 				6261A8BD1CC65EF500E94D06 /* LDBusNavigator.m in Sources */,
 				6261A8BE1CC65EF500E94D06 /* Connector_A.m in Sources */,
