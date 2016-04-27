@@ -43,9 +43,7 @@
  * 设置通用的拦截跳转方式；
  */
 -(void)setHookRouteBlock:(BOOL (^)(UIViewController *controller, UIViewController *baseViewController, NavigationMode routeMode)) routeBlock{
-    if (routeBlock) {
-        _routeBlock  = routeBlock;
-    }
+    _routeBlock  = routeBlock;
 }
 
 
@@ -123,6 +121,7 @@
             if (rootTabController.delegate && [rootTabController.delegate respondsToSelector:@selector(tabBarController:shouldSelectViewController:)]) {
                 [rootTabController.delegate tabBarController:rootTabController shouldSelectViewController:rootTabController.viewControllers[selectIndex]];
             }
+            rootTabController.selectedIndex = selectIndex;
         }
     } else if([rootViewContoller isKindOfClass:[UINavigationController class]]){
         [self popToSharedViewController:controller InNavigationController:(UINavigationController *)rootViewContoller];

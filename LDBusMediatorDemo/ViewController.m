@@ -13,6 +13,14 @@
 #import "ModuleAXXXServicePrt.h"
 #import "HostModuleXXXItem.h"
 
+/**
+ * 用于满足配置到TabController的URL-Controller的直接share跳转
+ * 任何URL-Controller均可以配置到TabController中
+ * 业务端routeURL跳转时，如果URL对应的controller在tabController中，直接跳转到对应Tab
+ * tip: 注意配置到tabController中的Controller所属Class不能重复
+ */
+static NSMutableDictionary *rootTabClassesDic = nil;
+
 NSString * const kCellIdentifier = @"kCellIdentifier";
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -24,10 +32,19 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
 
 @implementation ViewController
 
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = @"navTab1";
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemContacts tag:0];
+    }
+    return self;
+}
+
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self.view addSubview:self.tableView];
 }
 
@@ -59,10 +76,11 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
     //LDBusMediator Call
     if (indexPath.row == 0) {
         //presentViewController
-        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail11"] withParameters:@{kLDRouteModeKey:@(NavigationModePresent)}];
+        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"] withParameters:@{kLDRouteModeKey:@(NavigationModePresent)}];
     }
 
     if (indexPath.row == 1) {
+        [[LDBusNavigator navigator] setHookRouteBlock:nil];
         if([LDBusMediator canRouteURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]]){
             [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
         }
@@ -102,6 +120,17 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
             [self.navigationController pushViewController:controller animated:YES];
         }
     }
+
+    //测试hookURLRouteBlock
+    if (indexPath.row == 8) {
+        [self setURLHookRouteBlock];
+        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+    }
+
+    //测试无法找到url的tip提示
+    if (indexPath.row == 9) {
+        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail1111"]];
+    }
 }
 
 #pragma mark - getters and setters
@@ -120,8 +149,52 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
 - (NSArray *)dataSource
 {
     if (_dataSource == nil) {
-        _dataSource = @[@"present detail view controller", @"push detail view controller", @"present image", @"present image when error", @"service: show alert", @"service:get protcol model", @"service: set protocol model", @"get url controller"];
+        _dataSource = @[@"present detail view controller", @"push detail view controller", @"present image", @"present image when error", @"service: show alert", @"service:get protcol model", @"service: set protocol model", @"get url controller", @"route url with hook", @"route url not found"];
     }
     return _dataSource;
 }
+
+#pragma mark - test hook route URL
+
+-(void)setURLHookRouteBlock{
+    [[LDBusNavigator navigator] setHookRouteBlock:^BOOL(UIViewController * _Nonnull controller, UIViewController * _Nullable baseViewController, NavigationMode routeMode) {
+        UIViewController *tabController = [self isViewControllerInTabContainer:controller];
+        if (tabController) {
+            [[LDBusNavigator navigator] showURLController:tabController baseViewController:baseViewController routeMode:NavigationModeShare];
+            return YES;
+        } else {
+            return NO;
+        }
+    }];
+}
+
+-(UIViewController *)isViewControllerInTabContainer:(UIViewController *)controller{
+    if (rootTabClassesDic == nil) {
+        rootTabClassesDic = [[NSMutableDictionary alloc] initWithCapacity:2];
+        UIViewController *rootViewContoller = [UIApplication sharedApplication].delegate.window.rootViewController;
+        if (rootViewContoller && [rootViewContoller isKindOfClass:[UITabBarController class]]) {
+            NSArray *tabControllers = ((UITabBarController *)rootViewContoller).viewControllers;
+            [tabControllers enumerateObjectsUsingBlock:^(UIViewController *_Nonnull viewController, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([viewController isKindOfClass:[UINavigationController class]]) {
+                    viewController = [((UINavigationController *)viewController).viewControllers objectAtIndex:0];
+                }
+
+                [rootTabClassesDic setObject:viewController forKey:NSStringFromClass([viewController class])];
+            }];
+        }
+    }
+
+    if (rootTabClassesDic && rootTabClassesDic.count > 0) {
+        NSString *controllerKey = NSStringFromClass([controller class]);
+        if (controllerKey) {
+            return [rootTabClassesDic objectForKey:controllerKey];
+        } else {
+            return nil;
+        }
+    } else {
+        return nil;
+    }
+}
+
+
 @end

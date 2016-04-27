@@ -8,14 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LDBusMediator.h"
-
-/**
- * 用于满足配置到TabController的URL-Controller的直接share跳转
- * 任何URL-Controller均可以配置到TabController中
- * 业务端routeURL跳转时，如果URL对应的controller在tabController中，直接跳转到对应Tab
- * tip: 注意配置到tabController中的Controller所属Class不能重复
- */
-static NSMutableDictionary *rootTabClassesDic = nil;
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,45 +18,19 @@ static NSMutableDictionary *rootTabClassesDic = nil;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[LDBusNavigator navigator] setHookRouteBlock:^BOOL(UIViewController * _Nonnull controller, UIViewController * _Nullable baseViewController, NavigationMode routeMode) {
-        UIViewController *tabController = [self isViewControllerInTabContainer:controller];
-        if (tabController) {
-            [[LDBusNavigator navigator] showURLController:tabController baseViewController:baseViewController routeMode:NavigationModeNone];
-            return YES;
-        } else {
-            return NO;
-        }
-    }];
-    // Override point for customization after application launch.
+    UITabBarController *rootTabBarController = [[UITabBarController alloc] init];
+    UINavigationController *navTab1 = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    UIViewController *viewController2 = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+    UINavigationController *navTab2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
+    rootTabBarController.viewControllers = @[navTab1, navTab2];
+
+
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = rootTabBarController;
+    [self.window makeKeyAndVisible];
+
     return YES;
-}
-
--(UIViewController *)isViewControllerInTabContainer:(UIViewController *)controller{
-    if (rootTabClassesDic == nil) {
-        rootTabClassesDic = [[NSMutableDictionary alloc] initWithCapacity:2];
-        UIViewController *rootViewContoller = [UIApplication sharedApplication].delegate.window.rootViewController;
-        if (rootViewContoller && [rootViewContoller isKindOfClass:[UITabBarController class]]) {
-            NSArray *tabControllers = ((UITabBarController *)rootViewContoller).viewControllers;
-            [tabControllers enumerateObjectsUsingBlock:^(UIViewController *_Nonnull viewController, NSUInteger idx, BOOL * _Nonnull stop) {
-                if ([viewController isKindOfClass:[UINavigationController class]]) {
-                    viewController = [((UINavigationController *)viewController).viewControllers objectAtIndex:0];
-                }
-
-                [rootTabClassesDic setObject:viewController forKey:NSStringFromClass([viewController class])];
-            }];
-        }
-    }
-
-    if (rootTabClassesDic && rootTabClassesDic.count > 0) {
-        NSString *controllerKey = NSStringFromClass([controller class]);
-        if (controllerKey) {
-            return [rootTabClassesDic objectForKey:controllerKey];
-        } else {
-            return nil;
-        }
-    } else {
-        return nil;
-    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -21,10 +21,20 @@
 @implementation DemoModuleADetailViewController
 
 #pragma mark - life cycle
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = @"navTab2";
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:0];
+    }
+    return self;
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
-    
     [self.view addSubview:self.valueLabel];
     [self.view addSubview:self.imageView];
     [self.view addSubview:self.returnButton];
