@@ -76,22 +76,22 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
     //LDBusMediator Call
     if (indexPath.row == 0) {
         //presentViewController
-        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"] withParameters:@{kLDRouteModeKey:@(NavigationModePresent)}];
+        [LDBusMediator routeURL:[NSURL URLWithString:@"productScheme://ADetail"] withParameters:@{kLDRouteModeKey:@(NavigationModePresent)}];
     }
 
     if (indexPath.row == 1) {
         [[LDBusNavigator navigator] setHookRouteBlock:nil];
-        if([LDBusMediator canRouteURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]]){
-            [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+        if([LDBusMediator canRouteURL:[NSURL URLWithString:@"productScheme://ADetail"]]){
+            [LDBusMediator routeURL:[NSURL URLWithString:@"productScheme://ADetail"]];
         }
     }
 
     if (indexPath.row == 2) {
-        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"] withParameters:@{@"image":[UIImage imageNamed:@"image"]}];
+        [LDBusMediator routeURL:[NSURL URLWithString:@"productScheme://ADetail"] withParameters:@{@"image":[UIImage imageNamed:@"image"]}];
     }
 
     if (indexPath.row == 3) {
-        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"] withParameters:@{@"image":@""}];
+        [LDBusMediator routeURL:[NSURL URLWithString:@"productScheme://ADetail"] withParameters:@{@"image":@""}];
     }
 
     if (indexPath.row == 4) {
@@ -113,9 +113,9 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
     }
 
     if (indexPath.row == 7) {
-//        UIViewController *controller = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+//        UIViewController *controller = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"productScheme://ADetail"]];
         //测试notURLController
-        UIViewController *controller = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"ntescaipiao://ADetail"] withParameters:@{@"image":@""}];
+        UIViewController *controller = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"productScheme://ADetail"] withParameters:@{@"image":@""}];
         if (controller) {
             [self.navigationController pushViewController:controller animated:YES];
         }
@@ -124,12 +124,12 @@ NSString * const kCellIdentifier = @"kCellIdentifier";
     //测试hookURLRouteBlock
     if (indexPath.row == 8) {
         [self setURLHookRouteBlock];
-        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+        [LDBusMediator routeURL:[NSURL URLWithString:@"productScheme://ADetail"]];
     }
 
     //测试无法找到url的tip提示
     if (indexPath.row == 9) {
-        [LDBusMediator routeURL:[NSURL URLWithString:@"ntescaipiao://ADetail1111"]];
+        [LDBusMediator routeURL:[NSURL URLWithString:@"productScheme://ADetail1111"]];
     }
 }
 

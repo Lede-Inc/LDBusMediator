@@ -24,7 +24,7 @@
     UINavigationController *navTab1 = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
 
     //navTab2
-    UIViewController *viewController2 = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+    UIViewController *viewController2 = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"productScheme://ADetail"]];
     viewController2.title = @"navTab2";
     viewController2.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:0];
     UINavigationController *navTab2 = [[UINavigationController alloc] initWithRootViewController:viewController2];

@@ -27,7 +27,7 @@
 /**
  * 业务模块挂接中间件，注册自己能够处理的URL，完成url的跳转；
  * 如果url跳转需要回传数据，则传入实现了数据接收的调用者；
- *  @param URL          跳转到的URL，通常为 ntescaipiao://connector/relativePath
+ *  @param URL          跳转到的URL，通常为 productScheme://connector/relativePath
  *  @param params       伴随url的的调用参数
  *  @return 
     (1) UIViewController的派生实例，交给中间件present;
