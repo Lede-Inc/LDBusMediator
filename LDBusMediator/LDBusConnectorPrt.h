@@ -29,7 +29,6 @@
  * 如果url跳转需要回传数据，则传入实现了数据接收的调用者；
  *  @param URL          跳转到的URL，通常为 ntescaipiao://connector/relativePath
  *  @param params       伴随url的的调用参数
- *  @param responseDelg url回调的响应对象
  *  @return 
     (1) UIViewController的派生实例，交给中间件present;
     (2) nil 表示不能处理;

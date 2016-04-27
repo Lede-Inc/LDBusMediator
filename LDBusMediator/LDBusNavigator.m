@@ -8,9 +8,48 @@
 
 #import "LDBusNavigator.h"
 
+
+@interface LDBusNavigator (){
+    BOOL (^_routeBlock)(UIViewController * controller, UIViewController * baseViewController, NavigationMode routeMode);
+}
+
+@end
+
+
 @implementation LDBusNavigator
 
-+(void)showURLController:(nonnull UIViewController *)controller
++(LDBusNavigator *)navigator{
+    static LDBusNavigator *rootNavigator = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (rootNavigator == nil) {
+            rootNavigator = [[LDBusNavigator alloc] init];
+        }
+    });
+
+    return rootNavigator;
+}
+
+-(instancetype) init{
+    self = [super init];
+    if (self) {
+        _routeBlock = nil;
+    }
+    return self;
+}
+
+
+/**
+ * 设置通用的拦截跳转方式；
+ */
+-(void)setHookRouteBlock:(BOOL (^)(UIViewController *controller, UIViewController *baseViewController, NavigationMode routeMode)) routeBlock{
+    if (routeBlock) {
+        _routeBlock  = routeBlock;
+    }
+}
+
+
+-(void)showURLController:(nonnull UIViewController *)controller
       baseViewController:(nullable UIViewController *)baseViewController
                routeMode:(NavigationMode)routeMode{
     if (routeMode == NavigationModeNone) {
@@ -37,7 +76,7 @@
 }
 
 
-+(void)pushViewController:(nonnull UIViewController *)controller
+-(void)pushViewController:(nonnull UIViewController *)controller
        baseViewController:(nullable UIViewController *)baseViewController{
     if (!baseViewController) {
         baseViewController = [self topmostViewController];
@@ -55,7 +94,7 @@
 }
 
 
-+(void)popToSharedViewController:(nonnull UIViewController *)controller
+-(void)popToSharedViewController:(nonnull UIViewController *)controller
               baseViewController:(nullable UIViewController *)baseViewController{
     UIViewController *rootViewContoller = [UIApplication sharedApplication].delegate.window.rootViewController;
     if(!rootViewContoller) return;
@@ -97,7 +136,7 @@
 }
 
 
-+(void)presentedViewController:(nonnull UIViewController *)controller
+-(void)presentedViewController:(nonnull UIViewController *)controller
             baseViewController:(nullable UIViewController *)baseViewController{
     if(baseViewController == nil){
         baseViewController = [self topmostViewController];
@@ -117,7 +156,7 @@
 }
 
 
-+(BOOL)popToSharedViewController:(nonnull UIViewController *)controller InNavigationController:(nonnull UINavigationController *)navigationController{
+-(BOOL)popToSharedViewController:(nonnull UIViewController *)controller InNavigationController:(nonnull UINavigationController *)navigationController{
     NSInteger count = navigationController.viewControllers.count;
     if(count == 0) return NO;
 
@@ -151,8 +190,7 @@
     return success;
 }
 
-
-+ (UIViewController *)topmostViewController
+- (UIViewController *)topmostViewController
 {
     //rootViewController需要是TabBarController,排除正在显示FirstPage的情况
     UIViewController *rootViewContoller = [UIApplication sharedApplication].delegate.window.rootViewController;
@@ -194,6 +232,25 @@
         }
     }
     return (UIViewController *) navController;
+}
+
+@end
+
+
+@implementation LDBusNavigator (HookRouteBlock)
+
+
+-(void)hookShowURLController:(nonnull UIViewController *)controller
+          baseViewController:(nullable UIViewController *)baseViewController
+                   routeMode:(NavigationMode)routeMode{
+    BOOL success = NO;
+    if(_routeBlock){
+        success = _routeBlock(controller, baseViewController, routeMode);
+    }
+
+    if (!success) {
+        [self showURLController:controller baseViewController:baseViewController routeMode:routeMode];
+    }
 }
 
 @end

@@ -91,7 +91,7 @@ static NSMutableDictionary<NSString *, id<LDBusConnectorPrt>> *g_connectorMap = 
                 } else if ([returnObj class] == [UIViewController class]){
                     success = YES;
                 } else {
-                    [LDBusNavigator showURLController:returnObj baseViewController:params[kLDRouteViewControllerKey] routeMode:params[kLDRouteModeKey]?[params[kLDRouteModeKey] intValue]:NavigationModePush];
+                    [[LDBusNavigator navigator] hookShowURLController:returnObj baseViewController:params[kLDRouteViewControllerKey] routeMode:params[kLDRouteModeKey]?[params[kLDRouteModeKey] intValue]:NavigationModePush];
                     success = YES;
                 }
 
