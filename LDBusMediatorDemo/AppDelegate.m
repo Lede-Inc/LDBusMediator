@@ -19,9 +19,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UITabBarController *rootTabBarController = [[UITabBarController alloc] init];
+
+    //navTab1
     UINavigationController *navTab1 = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+
+    //navTab2
     UIViewController *viewController2 = [LDBusMediator viewControllerForURL:[NSURL URLWithString:@"ntescaipiao://ADetail"]];
+    viewController2.title = @"navTab2";
+    viewController2.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:0];
     UINavigationController *navTab2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
+
     rootTabBarController.viewControllers = @[navTab1, navTab2];
 
 
